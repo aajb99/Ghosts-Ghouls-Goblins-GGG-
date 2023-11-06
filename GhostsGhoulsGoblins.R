@@ -144,10 +144,15 @@ nn_tuneGrid <- grid_regular(hidden_units(range=c(1, 10)),
 folds <- vfold_cv(data_train, v = 10, repeats = 1)
 
 # Run CV
-CV_results <- nn_wf %>%
+tuned_nn <- nn_wf %>%
   tune_grid(resamples = folds,
             grid = nn_tuneGrid,
             metrics = metric_set(accuracy))
+
+# MLP in terms of accuracy
+tuned_nn %>% collect_metrics() %>%
+  filter(.metric=="accuracy") %>%
+  ggplot(aes(x=hidden_units, y=mean)) + geom_line()
 
 bestTune <- CV_results %>%
   select_best('accuracy')
@@ -155,11 +160,6 @@ bestTune <- CV_results %>%
 final_wf <- nn_wf %>%
   finalize_workflow(bestTune) %>%
   fit(data = data_train)
-
-# MLP in terms of accuracy
-final_wf %>% collect_metrics() %>%
-  filter(.metric=="accuracy") %>%
-  ggplot(aes(x=hidden_units, y=mean)) + geom_line()
 
 ## CV tune, finalize and predict here and save results22
 ## This takes a few min (10 on my laptop) so run it on becker if you want
