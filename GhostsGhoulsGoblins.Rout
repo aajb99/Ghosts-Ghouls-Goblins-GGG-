@@ -45,7 +45,7 @@ Type 'q()' to quit R.
 ✖ dplyr::lag()      masks stats::lag()
 ✖ yardstick::spec() masks readr::spec()
 ✖ recipes::step()   masks stats::step()
-• Use suppressPackageStartupMessages() to eliminate package startup messages
+• Use tidymodels_prefer() to resolve common conflicts.
 > #install.packages('DataExplorer')
 > #install.packages("poissonreg")
 > # library(poissonreg)
@@ -114,7 +114,7 @@ installing to /home/abrown52/R/x86_64-pc-linux-gnu-library/4.3/00LOCK-vroom/00ne
 * DONE (vroom)
 
 The downloaded source packages are in
-	‘/tmp/RtmpXIkFj4/downloaded_packages’
+	‘/tmp/Rtmpky9vLG/downloaded_packages’
 > library(vroom)
 
 Attaching package: ‘vroom’
@@ -163,7 +163,7 @@ downloaded 926 KB
 * DONE (parsnip)
 
 The downloaded source packages are in
-	‘/tmp/RtmpXIkFj4/downloaded_packages’
+	‘/tmp/Rtmpky9vLG/downloaded_packages’
 > library(parsnip)
 > install.packages('dbarts')
 Installing package into ‘/home/abrown52/R/x86_64-pc-linux-gnu-library/4.3’
@@ -257,7 +257,7 @@ g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -I../inst/include -Iinclude -
 g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -I../inst/include -Iinclude -pthread      -fpic  -g -O2 -ffile-prefix-map=/build/r-base-MHXHhT/r-base-4.3.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c crossvalidate.cpp -o crossvalidate.o
 g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -I../inst/include -Iinclude -pthread      -fpic  -g -O2 -ffile-prefix-map=/build/r-base-MHXHhT/r-base-4.3.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c guessNumCores.cpp -o guessNumCores.o
 gcc -I"/usr/share/R/include" -DNDEBUG -I../inst/include -Iinclude -pthread      -fpic  -g -O2 -ffile-prefix-map=/build/r-base-MHXHhT/r-base-4.3.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c makeModelMatrixFromDataFrame.c -o makeModelMatrixFromDataFrame.o
-make[1]: Entering directory '/tmp/RtmpZvSn4c/R.INSTALLd5c602fc5d70e/dbarts/src/dbarts'
+make[1]: Entering directory '/tmp/RtmpCEtR7D/R.INSTALLdc7b218af7299/dbarts/src/dbarts'
 g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -I../../inst/include -I../include  -pthread      -fpic  -g -O2 -ffile-prefix-map=/build/r-base-MHXHhT/r-base-4.3.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -fpic -c bartFit.cpp -o bartFit.o
 g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -I../../inst/include -I../include  -pthread      -fpic  -g -O2 -ffile-prefix-map=/build/r-base-MHXHhT/r-base-4.3.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -fpic -c binaryIO.cpp -o binaryIO.o
 g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -I../../inst/include -I../include  -pthread      -fpic  -g -O2 -ffile-prefix-map=/build/r-base-MHXHhT/r-base-4.3.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -fpic -c birthDeathRule.cpp -o birthDeathRule.o
@@ -284,8 +284,8 @@ a - state.o
 a - swapRule.o
 a - tree.o
 a - treePrior.o
-make[1]: Leaving directory '/tmp/RtmpZvSn4c/R.INSTALLd5c602fc5d70e/dbarts/src/dbarts'
-make[1]: Entering directory '/tmp/RtmpZvSn4c/R.INSTALLd5c602fc5d70e/dbarts/src/external'
+make[1]: Leaving directory '/tmp/RtmpCEtR7D/R.INSTALLdc7b218af7299/dbarts/src/dbarts'
+make[1]: Entering directory '/tmp/RtmpCEtR7D/R.INSTALLdc7b218af7299/dbarts/src/external'
 gcc -I"/usr/share/R/include" -DNDEBUG -I../include -pthread      -fpic  -g -O2 -ffile-prefix-map=/build/r-base-MHXHhT/r-base-4.3.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -fpic -c io.c -o io.o
 gcc -I"/usr/share/R/include" -DNDEBUG -I../include -pthread      -fpic  -g -O2 -ffile-prefix-map=/build/r-base-MHXHhT/r-base-4.3.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -fpic -c randomBase.c -o randomBase.o
 gcc -I"/usr/share/R/include" -DNDEBUG -I../include -pthread      -fpic  -g -O2 -ffile-prefix-map=/build/r-base-MHXHhT/r-base-4.3.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -fpic -c randomNorm.c -o randomNorm.o
@@ -296,8 +296,8 @@ a - io.o
 a - randomBase.o
 a - randomNorm.o
 a - random.o
-make[1]: Leaving directory '/tmp/RtmpZvSn4c/R.INSTALLd5c602fc5d70e/dbarts/src/external'
-make[1]: Entering directory '/tmp/RtmpZvSn4c/R.INSTALLd5c602fc5d70e/dbarts/src/misc'
+make[1]: Leaving directory '/tmp/RtmpCEtR7D/R.INSTALLdc7b218af7299/dbarts/src/external'
+make[1]: Entering directory '/tmp/RtmpCEtR7D/R.INSTALLdc7b218af7299/dbarts/src/misc'
 gcc -I"/usr/share/R/include" -DNDEBUG -I../include -pthread      -fpic  -g -O2 -ffile-prefix-map=/build/r-base-MHXHhT/r-base-4.3.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -fpic -msse2 -c adaptiveRadixTree.c -o adaptiveRadixTree.o
 gcc -I"/usr/share/R/include" -DNDEBUG -I../include -pthread      -fpic  -g -O2 -ffile-prefix-map=/build/r-base-MHXHhT/r-base-4.3.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -fpic -c binaryIO.c -o binaryIO.o
 gcc -I"/usr/share/R/include" -DNDEBUG -I../include -pthread      -fpic  -g -O2 -ffile-prefix-map=/build/r-base-MHXHhT/r-base-4.3.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -fpic -c blockingThreadManager.c -o blockingThreadManager.o
@@ -338,15 +338,15 @@ a - partition_sse2.o
 a - partition_sse4_1.o
 a - linearAlgebra_avx.o
 a - partition_avx2.o
-make[1]: Leaving directory '/tmp/RtmpZvSn4c/R.INSTALLd5c602fc5d70e/dbarts/src/misc'
-make[1]: Entering directory '/tmp/RtmpZvSn4c/R.INSTALLd5c602fc5d70e/dbarts/src/rc'
+make[1]: Leaving directory '/tmp/RtmpCEtR7D/R.INSTALLdc7b218af7299/dbarts/src/misc'
+make[1]: Entering directory '/tmp/RtmpCEtR7D/R.INSTALLdc7b218af7299/dbarts/src/rc'
 gcc -I"/usr/share/R/include" -DNDEBUG -I../include -pthread     -g -O2 -ffile-prefix-map=/build/r-base-MHXHhT/r-base-4.3.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -fpic -c bounds.c -o bounds.o
 gcc -I"/usr/share/R/include" -DNDEBUG -I../include -pthread     -g -O2 -ffile-prefix-map=/build/r-base-MHXHhT/r-base-4.3.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -fpic -c util.c -o util.o
 ar rv ../rc.a bounds.o util.o
 ar: creating ../rc.a
 a - bounds.o
 a - util.o
-make[1]: Leaving directory '/tmp/RtmpZvSn4c/R.INSTALLd5c602fc5d70e/dbarts/src/rc'
+make[1]: Leaving directory '/tmp/RtmpCEtR7D/R.INSTALLdc7b218af7299/dbarts/src/rc'
 g++ -std=gnu++17 -shared -L/usr/lib/R/lib -Wl,-Bsymbolic-functions -flto=auto -ffat-lto-objects -flto=auto -Wl,-z,relro -o dbarts.so R_C_interface.o R_interface.o R_interface_common.o R_interface_crossvalidate.o R_interface_rbart.o R_interface_sampler.o crossvalidate.o guessNumCores.o makeModelMatrixFromDataFrame.o dbarts.a external.a misc.a rc.a -pthread -L/usr/lib/R/lib -lR
 installing to /home/abrown52/R/x86_64-pc-linux-gnu-library/4.3/00LOCK-dbarts/00new/dbarts/libs
 ** R
@@ -363,7 +363,7 @@ installing to /home/abrown52/R/x86_64-pc-linux-gnu-library/4.3/00LOCK-dbarts/00n
 * DONE (dbarts)
 
 The downloaded source packages are in
-	‘/tmp/RtmpXIkFj4/downloaded_packages’
+	‘/tmp/Rtmpky9vLG/downloaded_packages’
 > library(dbarts)
 
 Attaching package: ‘dbarts’
@@ -400,7 +400,7 @@ downloaded 177 KB
 * DONE (embed)
 
 The downloaded source packages are in
-	‘/tmp/RtmpXIkFj4/downloaded_packages’
+	‘/tmp/Rtmpky9vLG/downloaded_packages’
 > library(embed)
 > library(themis)
 > 
@@ -554,61 +554,61 @@ dbl (5): id, bone_length, rotting_flesh, hair_length, has_soul
 +   tune_grid(resamples = folds,
 +             grid = nn_tuneGrid,
 +             metrics = metric_set(accuracy))
-2023-11-06 14:22:26.623622: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+2023-11-06 14:48:47.170792: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
 To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
-2023-11-06 14:22:29.331243: I tensorflow/core/common_runtime/process_util.cc:146] Creating new thread pool with default inter op setting: 2. Tune using inter_op_parallelism_threads for best performance.
-1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 3ms/step
+2023-11-06 14:48:49.834694: I tensorflow/core/common_runtime/process_util.cc:146] Creating new thread pool with default inter op setting: 2. Tune using inter_op_parallelism_threads for best performance.
+1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 9ms/step
 1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 2ms/step
-1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 21ms/step
-1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 27ms/step
-WARNING:tensorflow:5 out of the last 9 calls to <function Model.make_predict_function.<locals>.predict_function at 0x7f31181067a0> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
-1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 3ms/step
-WARNING:tensorflow:6 out of the last 11 calls to <function Model.make_predict_function.<locals>.predict_function at 0x7f31181075b0> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
-1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 3ms/step
-1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 30ms/step
-1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 2ms/step
-1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 43ms/step
-1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 3ms/step
-1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 14ms/step
-1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 24ms/step
-1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 27ms/step
-1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 3ms/step
-1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 2ms/step
-1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 27ms/step
-1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 2ms/step
-1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 42ms/step
-1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 14ms/step
 1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 28ms/step
-1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 8ms/step
-1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 1ms/step
-1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 32ms/step
-1/2 [==============>...............] - ETA: 0s2/2 [==============================] - ETA: 0s2/2 [==============================] - 0s 54ms/step
+1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 5ms/step
+WARNING:tensorflow:5 out of the last 9 calls to <function Model.make_predict_function.<locals>.predict_function at 0x7f9ff43367a0> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
+1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 35ms/step
+WARNING:tensorflow:6 out of the last 11 calls to <function Model.make_predict_function.<locals>.predict_function at 0x7f9ff43375b0> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
+1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 15ms/step
 1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 2ms/step
-1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 34ms/step
-1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 18ms/step
-1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 27ms/step
-1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 28ms/step
-1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 45ms/step
+1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 36ms/step
+1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 12ms/step
+1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 4ms/step
 1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 24ms/step
-1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 2ms/step
-1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 29ms/step
-1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 17ms/step
-1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 32ms/step
-1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 1ms/step
-1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 31ms/step
-1/2 [==============>...............] - ETA: 0s2/2 [==============================] - ETA: 0s2/2 [==============================] - 0s 60ms/step
+1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 3ms/step
 1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 2ms/step
 1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 2ms/step
 1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 26ms/step
+1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 11ms/step
+1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 17ms/step
+1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 23ms/step
+1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 1ms/step
+1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 1ms/step
+1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 24ms/step
+1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 16ms/step
+1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 30ms/step
+1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 18ms/step
+1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 28ms/step
+1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 2ms/step
+1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 26ms/step
+1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 36ms/step
+1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 3ms/step
+1/2 [==============>...............] - ETA: 0s2/2 [==============================] - ETA: 0s2/2 [==============================] - 0s 54ms/step
+1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 1ms/step
+1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 2ms/step
+1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 16ms/step
+1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 26ms/step
+1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 24ms/step
+1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 4ms/step
+1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 2ms/step
+1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 1ms/step
+1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 2ms/step
+1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 41ms/step
+1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 15ms/step
+1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 1ms/step
+1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 15ms/step
+1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 1ms/step
+1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 35ms/step
+1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 26ms/step
+1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 21ms/step
+1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 11ms/step
 1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 3ms/step
 1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 2ms/step
-1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 25ms/step
-1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 30ms/step
-1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 49ms/step
-1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 27ms/step
-1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 1ms/step
-1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 27ms/step
-1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 16ms/step
 > 
 > bestTune <- CV_results %>%
 +   select_best('accuracy')
@@ -618,8 +618,17 @@ WARNING:tensorflow:6 out of the last 11 calls to <function Model.make_predict_fu
 +   fit(data = data_train)
 > 
 > # MLP in terms of accuracy
-> tuned_nn %>% collect_metrics() %>%
+> final_wf %>% collect_metrics() %>%
 +   filter(.metric=="accuracy") %>%
 +   ggplot(aes(x=hidden_units, y=mean)) + geom_line()
-Error: object 'tuned_nn' not found
+Error in `collect_metrics()`:
+! No `collect_metric()` exists for this type of object.
+Backtrace:
+    ▆
+ 1. ├─... %>% ggplot(aes(x = hidden_units, y = mean))
+ 2. ├─ggplot2::ggplot(., aes(x = hidden_units, y = mean))
+ 3. ├─dplyr::filter(., .metric == "accuracy")
+ 4. ├─tune::collect_metrics(.)
+ 5. └─tune:::collect_metrics.default(.)
+ 6.   └─rlang::abort("No `collect_metric()` exists for this type of object.")
 Execution halted
