@@ -157,12 +157,22 @@ final_wf <- nn_wf %>%
   fit(data = data_train)
 
 # MLP in terms of accuracy
-tuned_nn %>% collect_metrics() %>%
+final_wf %>% collect_metrics() %>%
   filter(.metric=="accuracy") %>%
   ggplot(aes(x=hidden_units, y=mean)) + geom_line()
 
 ## CV tune, finalize and predict here and save results22
 ## This takes a few min (10 on my laptop) so run it on becker if you want
+# Kaggle DF
+ggg_predictions_nn <- predict(final_wf,
+                           new_data=data_test,
+                           type="class") %>% # "class" or "prob"
+  mutate(id = data_test$id, type = .pred_class) %>%
+  select(id, type)
+
+vroom_write(ggg_predictions_nn, "./data/ggg_pred_nn.csv", delim = ",")
+save(file = 'ggg_nn_wf.RData', list = c('final_wf'))
+load('ggg_nn_wf.RData')
 
 
 
