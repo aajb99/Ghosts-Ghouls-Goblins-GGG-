@@ -45,7 +45,7 @@ Type 'q()' to quit R.
 ✖ dplyr::lag()      masks stats::lag()
 ✖ yardstick::spec() masks readr::spec()
 ✖ recipes::step()   masks stats::step()
-• Search for functions across packages at https://www.tidymodels.org/find/
+• Use suppressPackageStartupMessages() to eliminate package startup messages
 > #install.packages('DataExplorer')
 > #install.packages("poissonreg")
 > # library(poissonreg)
@@ -57,7 +57,64 @@ Type 'q()' to quit R.
 > #library(ranger)
 > #install.packages('stacks')
 > #library(stacks)
-> #install.packages('vroom')
+> install.packages('vroom')
+Installing package into ‘/home/abrown52/R/x86_64-pc-linux-gnu-library/4.3’
+(as ‘lib’ is unspecified)
+trying URL 'https://cloud.r-project.org/src/contrib/vroom_1.6.4.tar.gz'
+Content type 'application/x-gzip' length 750198 bytes (732 KB)
+==================================================
+downloaded 732 KB
+
+* installing *source* package ‘vroom’ ...
+** package ‘vroom’ successfully unpacked and MD5 sums checked
+** using staged installation
+** libs
+using C compiler: ‘gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0’
+using C++ compiler: ‘g++ (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0’
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -Imio/include -DWIN32_LEAN_AND_MEAN -Ispdlog/include -DFMT_HEADER_ONLY -I'/usr/local/lib/R/site-library/cpp11/include' -I'/usr/local/lib/R/site-library/progress/include' -I'/usr/local/lib/R/site-library/tzdb/include'     -fpic  -g -O2 -ffile-prefix-map=/build/r-base-MHXHhT/r-base-4.3.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c Iconv.cpp -o Iconv.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -Imio/include -DWIN32_LEAN_AND_MEAN -Ispdlog/include -DFMT_HEADER_ONLY -I'/usr/local/lib/R/site-library/cpp11/include' -I'/usr/local/lib/R/site-library/progress/include' -I'/usr/local/lib/R/site-library/tzdb/include'     -fpic  -g -O2 -ffile-prefix-map=/build/r-base-MHXHhT/r-base-4.3.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c LocaleInfo.cpp -o LocaleInfo.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -Imio/include -DWIN32_LEAN_AND_MEAN -Ispdlog/include -DFMT_HEADER_ONLY -I'/usr/local/lib/R/site-library/cpp11/include' -I'/usr/local/lib/R/site-library/progress/include' -I'/usr/local/lib/R/site-library/tzdb/include'     -fpic  -g -O2 -ffile-prefix-map=/build/r-base-MHXHhT/r-base-4.3.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c altrep.cc -o altrep.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -Imio/include -DWIN32_LEAN_AND_MEAN -Ispdlog/include -DFMT_HEADER_ONLY -I'/usr/local/lib/R/site-library/cpp11/include' -I'/usr/local/lib/R/site-library/progress/include' -I'/usr/local/lib/R/site-library/tzdb/include'     -fpic  -g -O2 -ffile-prefix-map=/build/r-base-MHXHhT/r-base-4.3.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c cpp11.cpp -o cpp11.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -Imio/include -DWIN32_LEAN_AND_MEAN -Ispdlog/include -DFMT_HEADER_ONLY -I'/usr/local/lib/R/site-library/cpp11/include' -I'/usr/local/lib/R/site-library/progress/include' -I'/usr/local/lib/R/site-library/tzdb/include'     -fpic  -g -O2 -ffile-prefix-map=/build/r-base-MHXHhT/r-base-4.3.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c delimited_index.cc -o delimited_index.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -Imio/include -DWIN32_LEAN_AND_MEAN -Ispdlog/include -DFMT_HEADER_ONLY -I'/usr/local/lib/R/site-library/cpp11/include' -I'/usr/local/lib/R/site-library/progress/include' -I'/usr/local/lib/R/site-library/tzdb/include'     -fpic  -g -O2 -ffile-prefix-map=/build/r-base-MHXHhT/r-base-4.3.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c delimited_index_connection.cc -o delimited_index_connection.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -Imio/include -DWIN32_LEAN_AND_MEAN -Ispdlog/include -DFMT_HEADER_ONLY -I'/usr/local/lib/R/site-library/cpp11/include' -I'/usr/local/lib/R/site-library/progress/include' -I'/usr/local/lib/R/site-library/tzdb/include'     -fpic  -g -O2 -ffile-prefix-map=/build/r-base-MHXHhT/r-base-4.3.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c fixed_width_index_connection.cc -o fixed_width_index_connection.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -Imio/include -DWIN32_LEAN_AND_MEAN -Ispdlog/include -DFMT_HEADER_ONLY -I'/usr/local/lib/R/site-library/cpp11/include' -I'/usr/local/lib/R/site-library/progress/include' -I'/usr/local/lib/R/site-library/tzdb/include'     -fpic  -g -O2 -ffile-prefix-map=/build/r-base-MHXHhT/r-base-4.3.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c gen.cc -o gen.o
+gcc -I"/usr/share/R/include" -DNDEBUG -Imio/include -DWIN32_LEAN_AND_MEAN -Ispdlog/include -DFMT_HEADER_ONLY -I'/usr/local/lib/R/site-library/cpp11/include' -I'/usr/local/lib/R/site-library/progress/include' -I'/usr/local/lib/R/site-library/tzdb/include'     -fpic  -g -O2 -ffile-prefix-map=/build/r-base-MHXHhT/r-base-4.3.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c grisu3.c -o grisu3.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -Imio/include -DWIN32_LEAN_AND_MEAN -Ispdlog/include -DFMT_HEADER_ONLY -I'/usr/local/lib/R/site-library/cpp11/include' -I'/usr/local/lib/R/site-library/progress/include' -I'/usr/local/lib/R/site-library/tzdb/include'     -fpic  -g -O2 -ffile-prefix-map=/build/r-base-MHXHhT/r-base-4.3.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c guess_type.cc -o guess_type.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -Imio/include -DWIN32_LEAN_AND_MEAN -Ispdlog/include -DFMT_HEADER_ONLY -I'/usr/local/lib/R/site-library/cpp11/include' -I'/usr/local/lib/R/site-library/progress/include' -I'/usr/local/lib/R/site-library/tzdb/include'     -fpic  -g -O2 -ffile-prefix-map=/build/r-base-MHXHhT/r-base-4.3.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c iconv_file.cc -o iconv_file.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -Imio/include -DWIN32_LEAN_AND_MEAN -Ispdlog/include -DFMT_HEADER_ONLY -I'/usr/local/lib/R/site-library/cpp11/include' -I'/usr/local/lib/R/site-library/progress/include' -I'/usr/local/lib/R/site-library/tzdb/include'     -fpic  -g -O2 -ffile-prefix-map=/build/r-base-MHXHhT/r-base-4.3.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c index_collection.cc -o index_collection.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -Imio/include -DWIN32_LEAN_AND_MEAN -Ispdlog/include -DFMT_HEADER_ONLY -I'/usr/local/lib/R/site-library/cpp11/include' -I'/usr/local/lib/R/site-library/progress/include' -I'/usr/local/lib/R/site-library/tzdb/include'     -fpic  -g -O2 -ffile-prefix-map=/build/r-base-MHXHhT/r-base-4.3.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c vroom.cc -o vroom.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -Imio/include -DWIN32_LEAN_AND_MEAN -Ispdlog/include -DFMT_HEADER_ONLY -I'/usr/local/lib/R/site-library/cpp11/include' -I'/usr/local/lib/R/site-library/progress/include' -I'/usr/local/lib/R/site-library/tzdb/include'     -fpic  -g -O2 -ffile-prefix-map=/build/r-base-MHXHhT/r-base-4.3.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c vroom_big_int.cc -o vroom_big_int.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -Imio/include -DWIN32_LEAN_AND_MEAN -Ispdlog/include -DFMT_HEADER_ONLY -I'/usr/local/lib/R/site-library/cpp11/include' -I'/usr/local/lib/R/site-library/progress/include' -I'/usr/local/lib/R/site-library/tzdb/include'     -fpic  -g -O2 -ffile-prefix-map=/build/r-base-MHXHhT/r-base-4.3.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c vroom_chr.cc -o vroom_chr.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -Imio/include -DWIN32_LEAN_AND_MEAN -Ispdlog/include -DFMT_HEADER_ONLY -I'/usr/local/lib/R/site-library/cpp11/include' -I'/usr/local/lib/R/site-library/progress/include' -I'/usr/local/lib/R/site-library/tzdb/include'     -fpic  -g -O2 -ffile-prefix-map=/build/r-base-MHXHhT/r-base-4.3.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c vroom_date.cc -o vroom_date.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -Imio/include -DWIN32_LEAN_AND_MEAN -Ispdlog/include -DFMT_HEADER_ONLY -I'/usr/local/lib/R/site-library/cpp11/include' -I'/usr/local/lib/R/site-library/progress/include' -I'/usr/local/lib/R/site-library/tzdb/include'     -fpic  -g -O2 -ffile-prefix-map=/build/r-base-MHXHhT/r-base-4.3.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c vroom_dbl.cc -o vroom_dbl.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -Imio/include -DWIN32_LEAN_AND_MEAN -Ispdlog/include -DFMT_HEADER_ONLY -I'/usr/local/lib/R/site-library/cpp11/include' -I'/usr/local/lib/R/site-library/progress/include' -I'/usr/local/lib/R/site-library/tzdb/include'     -fpic  -g -O2 -ffile-prefix-map=/build/r-base-MHXHhT/r-base-4.3.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c vroom_dttm.cc -o vroom_dttm.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -Imio/include -DWIN32_LEAN_AND_MEAN -Ispdlog/include -DFMT_HEADER_ONLY -I'/usr/local/lib/R/site-library/cpp11/include' -I'/usr/local/lib/R/site-library/progress/include' -I'/usr/local/lib/R/site-library/tzdb/include'     -fpic  -g -O2 -ffile-prefix-map=/build/r-base-MHXHhT/r-base-4.3.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c vroom_errors.cpp -o vroom_errors.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -Imio/include -DWIN32_LEAN_AND_MEAN -Ispdlog/include -DFMT_HEADER_ONLY -I'/usr/local/lib/R/site-library/cpp11/include' -I'/usr/local/lib/R/site-library/progress/include' -I'/usr/local/lib/R/site-library/tzdb/include'     -fpic  -g -O2 -ffile-prefix-map=/build/r-base-MHXHhT/r-base-4.3.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c vroom_fct.cc -o vroom_fct.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -Imio/include -DWIN32_LEAN_AND_MEAN -Ispdlog/include -DFMT_HEADER_ONLY -I'/usr/local/lib/R/site-library/cpp11/include' -I'/usr/local/lib/R/site-library/progress/include' -I'/usr/local/lib/R/site-library/tzdb/include'     -fpic  -g -O2 -ffile-prefix-map=/build/r-base-MHXHhT/r-base-4.3.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c vroom_fwf.cc -o vroom_fwf.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -Imio/include -DWIN32_LEAN_AND_MEAN -Ispdlog/include -DFMT_HEADER_ONLY -I'/usr/local/lib/R/site-library/cpp11/include' -I'/usr/local/lib/R/site-library/progress/include' -I'/usr/local/lib/R/site-library/tzdb/include'     -fpic  -g -O2 -ffile-prefix-map=/build/r-base-MHXHhT/r-base-4.3.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c vroom_int.cc -o vroom_int.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -Imio/include -DWIN32_LEAN_AND_MEAN -Ispdlog/include -DFMT_HEADER_ONLY -I'/usr/local/lib/R/site-library/cpp11/include' -I'/usr/local/lib/R/site-library/progress/include' -I'/usr/local/lib/R/site-library/tzdb/include'     -fpic  -g -O2 -ffile-prefix-map=/build/r-base-MHXHhT/r-base-4.3.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c vroom_num.cc -o vroom_num.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -Imio/include -DWIN32_LEAN_AND_MEAN -Ispdlog/include -DFMT_HEADER_ONLY -I'/usr/local/lib/R/site-library/cpp11/include' -I'/usr/local/lib/R/site-library/progress/include' -I'/usr/local/lib/R/site-library/tzdb/include'     -fpic  -g -O2 -ffile-prefix-map=/build/r-base-MHXHhT/r-base-4.3.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c vroom_rle.cc -o vroom_rle.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -Imio/include -DWIN32_LEAN_AND_MEAN -Ispdlog/include -DFMT_HEADER_ONLY -I'/usr/local/lib/R/site-library/cpp11/include' -I'/usr/local/lib/R/site-library/progress/include' -I'/usr/local/lib/R/site-library/tzdb/include'     -fpic  -g -O2 -ffile-prefix-map=/build/r-base-MHXHhT/r-base-4.3.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c vroom_time.cc -o vroom_time.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -Imio/include -DWIN32_LEAN_AND_MEAN -Ispdlog/include -DFMT_HEADER_ONLY -I'/usr/local/lib/R/site-library/cpp11/include' -I'/usr/local/lib/R/site-library/progress/include' -I'/usr/local/lib/R/site-library/tzdb/include'     -fpic  -g -O2 -ffile-prefix-map=/build/r-base-MHXHhT/r-base-4.3.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c vroom_write.cc -o vroom_write.o
+g++ -std=gnu++17 -shared -L/usr/lib/R/lib -Wl,-Bsymbolic-functions -flto=auto -ffat-lto-objects -flto=auto -Wl,-z,relro -o vroom.so Iconv.o LocaleInfo.o altrep.o cpp11.o delimited_index.o delimited_index_connection.o fixed_width_index_connection.o gen.o grisu3.o guess_type.o iconv_file.o index_collection.o vroom.o vroom_big_int.o vroom_chr.o vroom_date.o vroom_dbl.o vroom_dttm.o vroom_errors.o vroom_fct.o vroom_fwf.o vroom_int.o vroom_num.o vroom_rle.o vroom_time.o vroom_write.o -L/usr/lib/R/lib -lR
+installing to /home/abrown52/R/x86_64-pc-linux-gnu-library/4.3/00LOCK-vroom/00new/vroom/libs
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+*** copying figures
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** checking absolute paths in shared objects and dynamic libraries
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (vroom)
+
+The downloaded source packages are in
+	‘/tmp/RtmpXIkFj4/downloaded_packages’
 > library(vroom)
 
 Attaching package: ‘vroom’
@@ -79,9 +136,490 @@ The following objects are masked from ‘package:readr’:
     fwf_empty, fwf_positions, fwf_widths, locale, output_column,
     problems, spec
 
-> #install.packages('parsnip')
+> install.packages('parsnip')
+Installing package into ‘/home/abrown52/R/x86_64-pc-linux-gnu-library/4.3’
+(as ‘lib’ is unspecified)
+trying URL 'https://cloud.r-project.org/src/contrib/parsnip_1.1.1.tar.gz'
+Content type 'application/x-gzip' length 948840 bytes (926 KB)
+==================================================
+downloaded 926 KB
+
+* installing *source* package ‘parsnip’ ...
+** package ‘parsnip’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** data
+*** moving datasets to lazyload DB
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+*** copying figures
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (parsnip)
+
+The downloaded source packages are in
+	‘/tmp/RtmpXIkFj4/downloaded_packages’
 > library(parsnip)
-> # install.packages('dbarts')
+> install.packages('dbarts')
+Installing package into ‘/home/abrown52/R/x86_64-pc-linux-gnu-library/4.3’
+(as ‘lib’ is unspecified)
+trying URL 'https://cloud.r-project.org/src/contrib/dbarts_0.9-23.tar.gz'
+Content type 'application/x-gzip' length 851029 bytes (831 KB)
+==================================================
+downloaded 831 KB
+
+* installing *source* package ‘dbarts’ ...
+** package ‘dbarts’ successfully unpacked and MD5 sums checked
+** using staged installation
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether the compiler supports GNU C... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to enable C11 features... none needed
+checking how to run the C preprocessor... gcc -E
+checking whether the compiler supports GNU C++... yes
+checking whether g++ -std=gnu++17 accepts -g... yes
+checking for g++ -std=gnu++17 option to enable C++11 features... none needed
+checking how to run the C++ preprocessor... g++ -std=gnu++17 -E
+checking for C/C++ restrict keyword... no
+checking for stdio.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for strings.h... yes
+checking for sys/stat.h... yes
+checking for sys/types.h... yes
+checking for unistd.h... yes
+checking whether byte ordering is bigendian... no
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... x86_64-pc-linux-gnu
+checking for C compiler vendor... gnu
+checking whether C compiler accepts ... yes
+checking whether C compiler accepts -msse2... yes
+checking whether C compiler accepts -msse4.1... yes
+checking whether C compiler accepts -mavx... yes
+checking whether C compiler accepts -mavx2... yes
+checking for a sed that does not truncate output... /bin/sed
+checking for grep that handles long lines and -e... /usr/bin/grep
+checking for egrep... /usr/bin/grep -E
+checking whether gcc is Clang... no
+checking whether pthreads work with "-pthread" and "-lpthread"... yes
+checking for joinable pthread attribute... PTHREAD_CREATE_JOINABLE
+checking whether more special flags are required for pthreads... no
+checking for PTHREAD_PRIO_INHERIT... yes
+checking for cstdint... yes
+checking for sys/time.h... yes
+checking for unistd.h... (cached) yes
+checking for malloc.h... yes
+checking for int64_t... yes
+checking for uint64_t... yes
+checking size of size_t... 8
+checking alignment of void*... 8
+checking for gettimeofday... yes
+checking for clock_gettime... yes
+checking for ffs... yes
+checking for size_t... yes
+checking for working alloca.h... yes
+checking for alloca... yes
+checking for working posix_memalign... yes
+checking for snprintf... yes
+checking if g++ supports namespace std... yes
+checking whether snprintf is in std::... yes
+checking for log1p... yes
+checking whether log1p is in std::... no
+configure: creating ./config.status
+config.status: creating src/Makevars
+config.status: creating src/config.hpp
+config.status: creating src/dbarts/config.hpp
+config.status: creating src/misc/config.h
+config.status: creating src/external/config.h
+config.status: creating inst/include/dbarts/types.hpp
+config.status: creating src/include/misc/types.h
+** libs
+using C compiler: ‘gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0’
+using C++ compiler: ‘g++ (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0’
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -I../inst/include -Iinclude -pthread      -fpic  -g -O2 -ffile-prefix-map=/build/r-base-MHXHhT/r-base-4.3.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c R_C_interface.cpp -o R_C_interface.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -I../inst/include -Iinclude -pthread      -fpic  -g -O2 -ffile-prefix-map=/build/r-base-MHXHhT/r-base-4.3.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c R_interface.cpp -o R_interface.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -I../inst/include -Iinclude -pthread      -fpic  -g -O2 -ffile-prefix-map=/build/r-base-MHXHhT/r-base-4.3.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c R_interface_common.cpp -o R_interface_common.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -I../inst/include -Iinclude -pthread      -fpic  -g -O2 -ffile-prefix-map=/build/r-base-MHXHhT/r-base-4.3.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c R_interface_crossvalidate.cpp -o R_interface_crossvalidate.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -I../inst/include -Iinclude -pthread      -fpic  -g -O2 -ffile-prefix-map=/build/r-base-MHXHhT/r-base-4.3.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c R_interface_rbart.cpp -o R_interface_rbart.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -I../inst/include -Iinclude -pthread      -fpic  -g -O2 -ffile-prefix-map=/build/r-base-MHXHhT/r-base-4.3.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c R_interface_sampler.cpp -o R_interface_sampler.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -I../inst/include -Iinclude -pthread      -fpic  -g -O2 -ffile-prefix-map=/build/r-base-MHXHhT/r-base-4.3.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c crossvalidate.cpp -o crossvalidate.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -I../inst/include -Iinclude -pthread      -fpic  -g -O2 -ffile-prefix-map=/build/r-base-MHXHhT/r-base-4.3.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c guessNumCores.cpp -o guessNumCores.o
+gcc -I"/usr/share/R/include" -DNDEBUG -I../inst/include -Iinclude -pthread      -fpic  -g -O2 -ffile-prefix-map=/build/r-base-MHXHhT/r-base-4.3.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c makeModelMatrixFromDataFrame.c -o makeModelMatrixFromDataFrame.o
+make[1]: Entering directory '/tmp/RtmpZvSn4c/R.INSTALLd5c602fc5d70e/dbarts/src/dbarts'
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -I../../inst/include -I../include  -pthread      -fpic  -g -O2 -ffile-prefix-map=/build/r-base-MHXHhT/r-base-4.3.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -fpic -c bartFit.cpp -o bartFit.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -I../../inst/include -I../include  -pthread      -fpic  -g -O2 -ffile-prefix-map=/build/r-base-MHXHhT/r-base-4.3.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -fpic -c binaryIO.cpp -o binaryIO.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -I../../inst/include -I../include  -pthread      -fpic  -g -O2 -ffile-prefix-map=/build/r-base-MHXHhT/r-base-4.3.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -fpic -c birthDeathRule.cpp -o birthDeathRule.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -I../../inst/include -I../include  -pthread      -fpic  -g -O2 -ffile-prefix-map=/build/r-base-MHXHhT/r-base-4.3.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -fpic -c changeRule.cpp -o changeRule.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -I../../inst/include -I../include  -pthread      -fpic  -g -O2 -ffile-prefix-map=/build/r-base-MHXHhT/r-base-4.3.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -fpic -c functions.cpp -o functions.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -I../../inst/include -I../include  -pthread      -fpic  -g -O2 -ffile-prefix-map=/build/r-base-MHXHhT/r-base-4.3.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -fpic -c likelihood.cpp -o likelihood.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -I../../inst/include -I../include  -pthread      -fpic  -g -O2 -ffile-prefix-map=/build/r-base-MHXHhT/r-base-4.3.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -fpic -c node.cpp -o node.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -I../../inst/include -I../include  -pthread      -fpic  -g -O2 -ffile-prefix-map=/build/r-base-MHXHhT/r-base-4.3.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -fpic -c parameterPrior.cpp -o parameterPrior.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -I../../inst/include -I../include  -pthread      -fpic  -g -O2 -ffile-prefix-map=/build/r-base-MHXHhT/r-base-4.3.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -fpic -c state.cpp -o state.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -I../../inst/include -I../include  -pthread      -fpic  -g -O2 -ffile-prefix-map=/build/r-base-MHXHhT/r-base-4.3.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -fpic -c swapRule.cpp -o swapRule.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -I../../inst/include -I../include  -pthread      -fpic  -g -O2 -ffile-prefix-map=/build/r-base-MHXHhT/r-base-4.3.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -fpic -c tree.cpp -o tree.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -I../../inst/include -I../include  -pthread      -fpic  -g -O2 -ffile-prefix-map=/build/r-base-MHXHhT/r-base-4.3.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -fpic -c treePrior.cpp -o treePrior.o
+ar rv ../dbarts.a bartFit.o binaryIO.o birthDeathRule.o changeRule.o functions.o likelihood.o node.o parameterPrior.o state.o swapRule.o tree.o treePrior.o
+ar: creating ../dbarts.a
+a - bartFit.o
+a - binaryIO.o
+a - birthDeathRule.o
+a - changeRule.o
+a - functions.o
+a - likelihood.o
+a - node.o
+a - parameterPrior.o
+a - state.o
+a - swapRule.o
+a - tree.o
+a - treePrior.o
+make[1]: Leaving directory '/tmp/RtmpZvSn4c/R.INSTALLd5c602fc5d70e/dbarts/src/dbarts'
+make[1]: Entering directory '/tmp/RtmpZvSn4c/R.INSTALLd5c602fc5d70e/dbarts/src/external'
+gcc -I"/usr/share/R/include" -DNDEBUG -I../include -pthread      -fpic  -g -O2 -ffile-prefix-map=/build/r-base-MHXHhT/r-base-4.3.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -fpic -c io.c -o io.o
+gcc -I"/usr/share/R/include" -DNDEBUG -I../include -pthread      -fpic  -g -O2 -ffile-prefix-map=/build/r-base-MHXHhT/r-base-4.3.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -fpic -c randomBase.c -o randomBase.o
+gcc -I"/usr/share/R/include" -DNDEBUG -I../include -pthread      -fpic  -g -O2 -ffile-prefix-map=/build/r-base-MHXHhT/r-base-4.3.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -fpic -c randomNorm.c -o randomNorm.o
+gcc -I"/usr/share/R/include" -DNDEBUG -I../include -pthread      -fpic  -g -O2 -ffile-prefix-map=/build/r-base-MHXHhT/r-base-4.3.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -fpic -c random.c -o random.o
+ar rv ../external.a io.o randomBase.o randomNorm.o random.o
+ar: creating ../external.a
+a - io.o
+a - randomBase.o
+a - randomNorm.o
+a - random.o
+make[1]: Leaving directory '/tmp/RtmpZvSn4c/R.INSTALLd5c602fc5d70e/dbarts/src/external'
+make[1]: Entering directory '/tmp/RtmpZvSn4c/R.INSTALLd5c602fc5d70e/dbarts/src/misc'
+gcc -I"/usr/share/R/include" -DNDEBUG -I../include -pthread      -fpic  -g -O2 -ffile-prefix-map=/build/r-base-MHXHhT/r-base-4.3.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -fpic -msse2 -c adaptiveRadixTree.c -o adaptiveRadixTree.o
+gcc -I"/usr/share/R/include" -DNDEBUG -I../include -pthread      -fpic  -g -O2 -ffile-prefix-map=/build/r-base-MHXHhT/r-base-4.3.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -fpic -c binaryIO.c -o binaryIO.o
+gcc -I"/usr/share/R/include" -DNDEBUG -I../include -pthread      -fpic  -g -O2 -ffile-prefix-map=/build/r-base-MHXHhT/r-base-4.3.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -fpic -c blockingThreadManager.c -o blockingThreadManager.o
+gcc -I"/usr/share/R/include" -DNDEBUG -I../include -pthread      -fpic  -g -O2 -ffile-prefix-map=/build/r-base-MHXHhT/r-base-4.3.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -fpic -c hierarchicalThreadManager.c -o hierarchicalThreadManager.o
+gcc -I"/usr/share/R/include" -DNDEBUG -I../include -pthread      -fpic  -g -O2 -ffile-prefix-map=/build/r-base-MHXHhT/r-base-4.3.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -fpic -c linearAlgebra.c -o linearAlgebra.o
+gcc -I"/usr/share/R/include" -DNDEBUG -I../include -pthread      -fpic  -g -O2 -ffile-prefix-map=/build/r-base-MHXHhT/r-base-4.3.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -fpic -c moments.c -o moments.o
+gcc -I"/usr/share/R/include" -DNDEBUG -I../include -pthread      -fpic  -g -O2 -ffile-prefix-map=/build/r-base-MHXHhT/r-base-4.3.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -fpic -c partition.c -o partition.o
+gcc -I"/usr/share/R/include" -DNDEBUG -I../include -pthread      -fpic  -g -O2 -ffile-prefix-map=/build/r-base-MHXHhT/r-base-4.3.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -fpic -c simd.c -o simd.o
+gcc -I"/usr/share/R/include" -DNDEBUG -I../include -pthread      -fpic  -g -O2 -ffile-prefix-map=/build/r-base-MHXHhT/r-base-4.3.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -fpic -c string.c -o string.o
+gcc -I"/usr/share/R/include" -DNDEBUG -I../include -pthread      -fpic  -g -O2 -ffile-prefix-map=/build/r-base-MHXHhT/r-base-4.3.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -fpic -c thread.c -o thread.o
+echo gcc -I"/usr/share/R/include" -DNDEBUG -I../include -pthread      -fpic  -g -O2 -ffile-prefix-map=/build/r-base-MHXHhT/r-base-4.3.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -fpic -c linearAlgebra_sse2.c -o linearAlgebra_sse2.c
+gcc -I/usr/share/R/include -DNDEBUG -I../include -pthread -fpic -g -O2 -ffile-prefix-map=/build/r-base-MHXHhT/r-base-4.3.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fpic -c linearAlgebra_sse2.c -o linearAlgebra_sse2.c
+echo gcc -I"/usr/share/R/include" -DNDEBUG -I../include -pthread      -fpic  -g -O2 -ffile-prefix-map=/build/r-base-MHXHhT/r-base-4.3.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -fpic -c moments_sse2.c -o moments_sse2.o
+gcc -I/usr/share/R/include -DNDEBUG -I../include -pthread -fpic -g -O2 -ffile-prefix-map=/build/r-base-MHXHhT/r-base-4.3.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fpic -c moments_sse2.c -o moments_sse2.o
+echo gcc -I"/usr/share/R/include" -DNDEBUG -I../include -pthread      -fpic  -g -O2 -ffile-prefix-map=/build/r-base-MHXHhT/r-base-4.3.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -fpic -c partition_sse2.c -o partition_sse2.o
+gcc -I/usr/share/R/include -DNDEBUG -I../include -pthread -fpic -g -O2 -ffile-prefix-map=/build/r-base-MHXHhT/r-base-4.3.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fpic -c partition_sse2.c -o partition_sse2.o
+echo gcc -I"/usr/share/R/include" -DNDEBUG -I../include -pthread      -fpic  -g -O2 -ffile-prefix-map=/build/r-base-MHXHhT/r-base-4.3.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -fpic -c partition_sse4_1.c -o partition_sse4_1.o
+gcc -I/usr/share/R/include -DNDEBUG -I../include -pthread -fpic -g -O2 -ffile-prefix-map=/build/r-base-MHXHhT/r-base-4.3.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fpic -c partition_sse4_1.c -o partition_sse4_1.o
+echo gcc -I"/usr/share/R/include" -DNDEBUG -I../include -pthread      -fpic  -g -O2 -ffile-prefix-map=/build/r-base-MHXHhT/r-base-4.3.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -fpic -c linearAlgebra_avx.c -o linearAlgebra_avx.c
+gcc -I/usr/share/R/include -DNDEBUG -I../include -pthread -fpic -g -O2 -ffile-prefix-map=/build/r-base-MHXHhT/r-base-4.3.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fpic -c linearAlgebra_avx.c -o linearAlgebra_avx.c
+echo gcc -I"/usr/share/R/include" -DNDEBUG -I../include -pthread      -fpic  -g -O2 -ffile-prefix-map=/build/r-base-MHXHhT/r-base-4.3.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -fpic -c partition_avx2.c -o partition_avx2.o
+gcc -I/usr/share/R/include -DNDEBUG -I../include -pthread -fpic -g -O2 -ffile-prefix-map=/build/r-base-MHXHhT/r-base-4.3.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fpic -c partition_avx2.c -o partition_avx2.o
+ar rv ../misc.a adaptiveRadixTree.o binaryIO.o blockingThreadManager.o hierarchicalThreadManager.o linearAlgebra.o moments.o partition.o simd.o string.o thread.o linearAlgebra_sse2.o moments_sse2.o partition_sse2.o partition_sse4_1.o linearAlgebra_avx.o partition_avx2.o
+ar: creating ../misc.a
+a - adaptiveRadixTree.o
+a - binaryIO.o
+a - blockingThreadManager.o
+a - hierarchicalThreadManager.o
+a - linearAlgebra.o
+a - moments.o
+a - partition.o
+a - simd.o
+a - string.o
+a - thread.o
+a - linearAlgebra_sse2.o
+a - moments_sse2.o
+a - partition_sse2.o
+a - partition_sse4_1.o
+a - linearAlgebra_avx.o
+a - partition_avx2.o
+make[1]: Leaving directory '/tmp/RtmpZvSn4c/R.INSTALLd5c602fc5d70e/dbarts/src/misc'
+make[1]: Entering directory '/tmp/RtmpZvSn4c/R.INSTALLd5c602fc5d70e/dbarts/src/rc'
+gcc -I"/usr/share/R/include" -DNDEBUG -I../include -pthread     -g -O2 -ffile-prefix-map=/build/r-base-MHXHhT/r-base-4.3.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -fpic -c bounds.c -o bounds.o
+gcc -I"/usr/share/R/include" -DNDEBUG -I../include -pthread     -g -O2 -ffile-prefix-map=/build/r-base-MHXHhT/r-base-4.3.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -fpic -c util.c -o util.o
+ar rv ../rc.a bounds.o util.o
+ar: creating ../rc.a
+a - bounds.o
+a - util.o
+make[1]: Leaving directory '/tmp/RtmpZvSn4c/R.INSTALLd5c602fc5d70e/dbarts/src/rc'
+g++ -std=gnu++17 -shared -L/usr/lib/R/lib -Wl,-Bsymbolic-functions -flto=auto -ffat-lto-objects -flto=auto -Wl,-z,relro -o dbarts.so R_C_interface.o R_interface.o R_interface_common.o R_interface_crossvalidate.o R_interface_rbart.o R_interface_sampler.o crossvalidate.o guessNumCores.o makeModelMatrixFromDataFrame.o dbarts.a external.a misc.a rc.a -pthread -L/usr/lib/R/lib -lR
+installing to /home/abrown52/R/x86_64-pc-linux-gnu-library/4.3/00LOCK-dbarts/00new/dbarts/libs
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** checking absolute paths in shared objects and dynamic libraries
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (dbarts)
+
+The downloaded source packages are in
+	‘/tmp/RtmpXIkFj4/downloaded_packages’
 > library(dbarts)
-Error in library(dbarts) : there is no package called ‘dbarts’
+
+Attaching package: ‘dbarts’
+
+The following object is masked from ‘package:parsnip’:
+
+    bart
+
+The following object is masked from ‘package:tidyr’:
+
+    extract
+
+> install.packages('embed')
+Installing package into ‘/home/abrown52/R/x86_64-pc-linux-gnu-library/4.3’
+(as ‘lib’ is unspecified)
+trying URL 'https://cloud.r-project.org/src/contrib/embed_1.1.3.tar.gz'
+Content type 'application/x-gzip' length 181505 bytes (177 KB)
+==================================================
+downloaded 177 KB
+
+* installing *source* package ‘embed’ ...
+** package ‘embed’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** data
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+*** copying figures
+** building package indices
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (embed)
+
+The downloaded source packages are in
+	‘/tmp/RtmpXIkFj4/downloaded_packages’
+> library(embed)
+> library(themis)
+> 
+> # rm(list=ls()) use to erase environment
+> 
+> ## 112 Cols
+> 
+> data_train <- vroom("./data/train.csv") %>%
++   mutate(type=factor(type))# grab training data
+Rows: 371 Columns: 7
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (2): color, type
+dbl (5): id, bone_length, rotting_flesh, hair_length, has_soul
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+> # Missing values fill experiment:
+> miss_val_data <- vroom("./data/trainWithMissingValues.csv") %>%
++   mutate(type=factor(type))# grab training data
+Rows: 371 Columns: 7
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (2): color, type
+dbl (5): id, bone_length, rotting_flesh, hair_length, has_soul
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+> 
+> #######################
+> ##### Recipe/Bake #####
+> #######################
+> 
+> rFormula <- type ~ .
+> 
+> ## For target encoding/Random Forests: ###
+> missval_recipe <- recipe(rFormula, data = miss_val_data) %>% # set model formula and dataset
++   step_impute_linear(bone_length, impute_with = imp_vars(all_predictors())) %>%
++   step_impute_linear(rotting_flesh, impute_with = imp_vars(all_predictors())) %>%
++   step_impute_linear(hair_length, impute_with = imp_vars(all_predictors())) %>%
++   step_impute_linear(has_soul, impute_with = imp_vars(all_predictors()))
+>   
+> prepped_recipe <- prep(missval_recipe) # preprocessing new data
+> baked_data1 <- bake(prepped_recipe, new_data = miss_val_data)
+> 
+> rmse_vec(data_train[is.na(miss_val_data)], baked_data1[is.na(miss_val_data)])
+[1] 0.1400668
+> 
+> 
+> ###############################
+> ##### K-Nearest Neighbors #####
+> ###############################
+> 
+> ## For target encoding ###
+> my_recipe <- recipe(rFormula, data = data_train) %>% # set model formula and dataset
++   #step_mutate_at(all_numeric_predictors(), fn = factor) %>%
++   #step_other(all_nominal_predictors(), threshold = .001) %>%
++   step_lencode_glm(color, outcome = vars(type)) %>% 
++   #step_pca(all_predictors(), threshold = 0.8) # Threshold between 0 and 1, test run for classification rf
++   #step_smote(all_outcomes(), neighbors = 5)
++   step_dummy(all_nominal_predictors()) # get dummy variables
+> 
+> #install.packages('kknn')
+> library(kknn)
+> 
+> my_recipe_k <- my_recipe %>%
++   step_normalize()
+> 
+> prepped_recipe_k <- prep(my_recipe) # preprocessing new data
+> baked_data_k <- bake(prepped_recipe_k, new_data = data_train)
+> 
+> ## knn model
+> knn_model <- nearest_neighbor(neighbors=tune()) %>% # set or tune
++   set_mode("classification") %>%
++   set_engine("kknn")
+> 
+> knn_wf <- workflow() %>%
++   add_recipe(my_recipe_k) %>%
++   add_model(knn_model)
+> 
+> ## Fit or Tune MOdel
+> tuning_grid <- grid_regular(neighbors(),
++                             levels = 5) ## L^2 total tuning possibilities
+> 
+> # Split data for CV
+> folds <- vfold_cv(data_train, v = 10, repeats = 1)
+> 
+> # Run CV
+> CV_results <- knn_wf %>%
++   tune_grid(resamples = folds,
++             grid = tuning_grid,
++             metrics = metric_set(accuracy))
+> 
+> bestTune <- CV_results %>%
++   select_best('accuracy')
+> 
+> final_wf <- knn_wf %>%
++   finalize_workflow(bestTune) %>%
++   fit(data = data_train)
+> 
+> data_test <- vroom("./data/test.csv") # grab testing data
+Rows: 529 Columns: 6
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (1): color
+dbl (5): id, bone_length, rotting_flesh, hair_length, has_soul
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+> 
+> # Kaggle DF
+> ggg_predictions <- predict(final_wf,
++                               new_data=data_test,
++                               type="class") %>% # "class" or "prob"
++   mutate(id = data_test$id, type = .pred_class) %>%
++   select(id, type)
+> 
+> vroom_write(ggg_predictions, "./data/ggg_pred_knn.csv", delim = ",")
+> # save(file = 'amazon_knn_wf.RData', list = c('final_wf'))
+> # load('amazon_knn_wf.RData')
+> 
+> 
+> ###########################
+> ##### Neural Networks #####
+> ###########################
+> 
+> nn_recipe <- recipe(rFormula, data= data_train) %>%
++   update_role(id, new_role="id") %>%
++   step_lencode_glm(color, outcome = vars(type)) %>% ## Turn color to factor then dummy encode color
++   step_dummy(all_nominal_predictors()) %>%
++   step_range(all_numeric_predictors(), min=0, max=1) #scale to [0,1]
+> 
+> nn_model <- mlp(hidden_units = tune(),
++                 epochs = 50, #or 100 or 250
++                 activation="relu") %>% # RELU works comparatively well
++   set_engine("keras", verbose=0) %>% #verbose = 0 prints off less
++   set_mode("classification")
+> 
+> nn_wf <- workflow() %>%
++   add_recipe(nn_recipe) %>%
++   add_model(nn_model)
+> 
+> nn_tuneGrid <- grid_regular(hidden_units(range=c(1, 10)),
++                             levels=5)
+> 
+> # Split data for CV
+> folds <- vfold_cv(data_train, v = 10, repeats = 1)
+> 
+> # Run CV
+> CV_results <- nn_wf %>%
++   tune_grid(resamples = folds,
++             grid = nn_tuneGrid,
++             metrics = metric_set(accuracy))
+2023-11-06 14:22:26.623622: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-11-06 14:22:29.331243: I tensorflow/core/common_runtime/process_util.cc:146] Creating new thread pool with default inter op setting: 2. Tune using inter_op_parallelism_threads for best performance.
+1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 3ms/step
+1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 2ms/step
+1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 21ms/step
+1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 27ms/step
+WARNING:tensorflow:5 out of the last 9 calls to <function Model.make_predict_function.<locals>.predict_function at 0x7f31181067a0> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
+1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 3ms/step
+WARNING:tensorflow:6 out of the last 11 calls to <function Model.make_predict_function.<locals>.predict_function at 0x7f31181075b0> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
+1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 3ms/step
+1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 30ms/step
+1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 2ms/step
+1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 43ms/step
+1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 3ms/step
+1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 14ms/step
+1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 24ms/step
+1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 27ms/step
+1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 3ms/step
+1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 2ms/step
+1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 27ms/step
+1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 2ms/step
+1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 42ms/step
+1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 14ms/step
+1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 28ms/step
+1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 8ms/step
+1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 1ms/step
+1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 32ms/step
+1/2 [==============>...............] - ETA: 0s2/2 [==============================] - ETA: 0s2/2 [==============================] - 0s 54ms/step
+1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 2ms/step
+1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 34ms/step
+1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 18ms/step
+1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 27ms/step
+1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 28ms/step
+1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 45ms/step
+1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 24ms/step
+1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 2ms/step
+1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 29ms/step
+1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 17ms/step
+1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 32ms/step
+1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 1ms/step
+1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 31ms/step
+1/2 [==============>...............] - ETA: 0s2/2 [==============================] - ETA: 0s2/2 [==============================] - 0s 60ms/step
+1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 2ms/step
+1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 2ms/step
+1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 26ms/step
+1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 3ms/step
+1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 2ms/step
+1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 25ms/step
+1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 30ms/step
+1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 49ms/step
+1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 27ms/step
+1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 1ms/step
+1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 27ms/step
+1/2 [==============>...............] - ETA: 0s2/2 [==============================] - 0s 16ms/step
+> 
+> bestTune <- CV_results %>%
++   select_best('accuracy')
+> 
+> final_wf <- nn_wf %>%
++   finalize_workflow(bestTune) %>%
++   fit(data = data_train)
+> 
+> # MLP in terms of accuracy
+> tuned_nn %>% collect_metrics() %>%
++   filter(.metric=="accuracy") %>%
++   ggplot(aes(x=hidden_units, y=mean)) + geom_line()
+Error: object 'tuned_nn' not found
 Execution halted
