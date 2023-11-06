@@ -157,7 +157,7 @@ final_wf <- nn_wf %>%
   fit(data = data_train)
 
 # MLP in terms of accuracy
-_wf %>% collect_metrics() %>%
+final_wf %>% collect_metrics() %>%
   filter(.metric=="accuracy") %>%
   ggplot(aes(x=hidden_units, y=mean)) + geom_line()
 
