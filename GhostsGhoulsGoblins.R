@@ -127,10 +127,15 @@ nn_recipe <- recipe(rFormula, data= data_train) %>%
   step_dummy(all_nominal_predictors()) %>%
   step_range(all_numeric_predictors(), min=0, max=1) #scale to [0,1]
 
+# nn_model <- mlp(hidden_units = tune(),
+#                 epochs = 50, #or 100 or 250
+#                 activation="relu") %>% # RELU works comparatively well
+#   set_engine("keras", verbose=0) %>% #verbose = 0 prints off less
+#   set_mode("classification")
+
 nn_model <- mlp(hidden_units = tune(),
-                epochs = 50, #or 100 or 250
-                activation="relu") %>% # RELU works comparatively well
-  set_engine("keras", verbose=0) %>% #verbose = 0 prints off less
+                epochs = 50) %>% # RELU works comparatively well
+  set_engine("nnet") %>% #verbose = 0 prints off less
   set_mode("classification")
 
 nn_wf <- workflow() %>%
@@ -141,7 +146,7 @@ nn_tuneGrid <- grid_regular(hidden_units(range=c(1, 10)),
                             levels=5)
 
 # Split data for CV
-folds <- vfold_cv(data_train, v = 10, repeats = 1)
+folds <- vfold_cv(data_train, v = 5, repeats = 1)
 
 # Run CV
 tuned_nn <- nn_wf %>%
@@ -154,12 +159,14 @@ tuned_nn %>% collect_metrics() %>%
   filter(.metric=="accuracy") %>%
   ggplot(aes(x=hidden_units, y=mean)) + geom_line()
 
-bestTune <- CV_results %>%
+bestTune <- tuned_nn %>%
   select_best('accuracy')
 
 final_wf <- nn_wf %>%
   finalize_workflow(bestTune) %>%
   fit(data = data_train)
+
+data_test <- vroom("./data/test.csv") # grab testing data
 
 ## CV tune, finalize and predict here and save results22
 ## This takes a few min (10 on my laptop) so run it on becker if you want
@@ -171,8 +178,8 @@ ggg_predictions_nn <- predict(final_wf,
   select(id, type)
 
 vroom_write(ggg_predictions_nn, "./data/ggg_pred_nn.csv", delim = ",")
-save(file = 'ggg_nn_wf.RData', list = c('final_wf'))
-load('ggg_nn_wf.RData')
+# save(file = 'ggg_nn_wf.RData', list = c('final_wf'))
+# load('ggg_nn_wf.RData')
 
 
 
