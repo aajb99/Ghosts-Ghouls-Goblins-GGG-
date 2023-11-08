@@ -183,9 +183,76 @@ vroom_write(ggg_predictions_nn, "./data/ggg_pred_nn.csv", delim = ",")
 
 
 
+#########################
+##### Boosting/Bart #####
+#########################
 
+install.packages('bonsai')
+library(bonsai)
+install.packages('lightgbm')
+library(lightgbm)
 
+boost_recipe <- recipe(rFormula, data= data_train) %>%
+  update_role(id, new_role="id") %>%
+  step_lencode_glm(color, outcome = vars(type)) %>% ## Turn color to factor then dummy encode color
+  step_dummy(all_nominal_predictors()) %>%
+  step_range(all_numeric_predictors(), min=0, max=1) #scale to [0,1]
 
+prepped_recipe_boost <- prep(boost_recipe) # preprocessing new data
+baked_data_boost <- bake(prepped_recipe_boost, new_data = data_train)
+
+boost_model <- boost_tree(tree_depth=tune(),
+                          trees=tune(),
+                          learn_rate=tune()) %>%
+  set_engine("lightgbm") %>% #or "xgboost" but lightgbm is faster
+  set_mode("classification")
+
+######################################
+### Can switch to bart_model here: ###
+bart_model <- bart(trees=tune()) %>% # BART figures out depth and learn_rate
+  set_engine("dbarts") %>% # might need to install1
+  set_mode("classification")
+######################################
+
+boost_wf <- workflow() %>%
+  add_recipe(boost_recipe) %>%
+  add_model(boost_model)
+
+boost_tuneGrid <- grid_regular(tree_depth(),
+                               trees(),
+                               learn_rate(),
+                            levels=5)
+
+# Split data for CV
+folds <- vfold_cv(data_train, v = 5, repeats = 1)
+
+# Run CV
+tuned_boost <- boost_wf %>%
+  tune_grid(resamples = folds,
+            grid = boost_tuneGrid,
+            metrics = metric_set(accuracy))
+
+bestTune <- tuned_boost %>%
+  select_best('accuracy')
+
+final_wf <- boost_wf %>%
+  finalize_workflow(bestTune) %>%
+  fit(data = data_train)
+
+data_test <- vroom("./data/test.csv") # grab testing data
+
+## CV tune, finalize and predict here and save results22
+## This takes a few min (10 on my laptop) so run it on becker if you want
+# Kaggle DF
+ggg_predictions_boost <- predict(final_wf,
+                              new_data=data_test,
+                              type="class") %>% # "class" or "prob"
+  mutate(id = data_test$id, type = .pred_class) %>%
+  select(id, type)
+
+vroom_write(ggg_predictions_boost, "./data/ggg_pred_boost.csv", delim = ",")
+# save(file = 'ggg_nn_wf.RData', list = c('final_wf'))
+# load('ggg_nn_wf.RData')
 
 
 
